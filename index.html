@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-content>
+        <div class="ma-6">
+          <v-card
+            class="pa-4 mx-auto"
+            max-width="1000"
+            outlined
+          >
+            <h1 class="display-2">NEUTRINO調声支援ツール</h1>
+            <div></div>
+            <v-divider class="mt-2"></v-divider>
+            <h2 class="ml-2 mt-8 mb-1 headline">はじめに</h2>
+            <v-divider></v-divider>
+            <div class="mx-3 mt-3" style="word-break: keep-all">
+              本ソフトウェアは <a href="https://n3utrino.work/">NEUTRINO</a> をGUIで簡単に扱えるように、
+              また、ピッチやタイミングなどの中間ファイルを編集するために作成したものです。（非公式ツールです）<br>
+              NEUTRINO の基本的な使い方や仕様・設定等は、<a href="https://n3utrino.work/">NEUTRINO公式サイト</a>をご覧ください。
+              不具合を発見された方は私のTwitter（<a href="https://twitter.com/m_sig_tw">@m_sig_tw</a>）までご報告いただけると助かります。
+            </div>
+            <h2 class="ml-2 mt-8 mb-1 headline">初期設定</h2>
+            <v-divider></v-divider>
+            <div class="mx-3 mt-3" style="word-break: keep-all">
+              メニューバーのファイル(F)から環境設定を選択し、NEUTRINOフォルダのパスに
+              Run.batが存在するフォルダを指定してください。
+              <div class="mt-4 ml-6" style="background-image: url('./image1.png'); width: 477px; height: 200px"></div>
+            </div>
+            <h2 class="ml-2 mt-8 mb-1 headline">ファイル（プロジェクト）の読み込み</h2>
+            <v-divider></v-divider>
+            <div class="mx-3 mt-3" style="word-break: keep-all">
+              メニューバーのファイル(F)から開くを選択するか、編集画面（ピアノロール画面）にファイルをドラッグアンドドロップしてください。<br>
+              読み込めるファイルの種類は musicxml, xml, f0, mgc, bap, lab です。
+              <v-alert
+                border="left"
+                colored-border
+                type="warning"
+                elevation="2"
+                class="ma-2 mb-3"
+              >
+                読み込めるのはNEUTRINOフォルダー内のファイルのみです。
+                例えば、musicxmlファイルが NEUTRINO のscoreフォルダ内ではなく別のフォルダにある場合は、
+                scoreフォルダ内にコピーしてから読み込んでください。（f0やlabなども同様です）
+              </v-alert>
+            </div>
+            <h2 class="ml-2 mt-8 mb-1 headline">基本的な使い方</h2>
+            <v-divider></v-divider>
+            <div class="mx-3 mt-3" style="word-break: keep-all">
+              左側の SCORE, TIMING, PITCH, DYNAMICS から編集したいものを選択して、
+              上部に並んでいるツールから使いたいツールを選択し、
+              編集を行ってください。
+              <v-alert
+                border="left"
+                colored-border
+                type="info"
+                elevation="2"
+                class="ma-2 mb-3"
+              >
+                タイミングを書き換えるとピッチも生成し直さないといけないため、
+                タイミング → ピッチ・ダイナミクス の順序での編集をおすすめします。
+              </v-alert>
+              編集し終わったら、保存をしてNEUTRINO・WORLD・NSFを実行してください。（次の項で説明します）
+              <div class="mt-4 ml-6" style="background-image: url('./image2.png'); width: 500px; height: 320px"></div>
+              <div class="ml-6">
+                <h2 class="mt-2 subtitle-2">SCORE</h2>
+                <div class="ml-3 mt-2" style="word-break: keep-all">
+                  今のところ未実装です。
+                </div>
+                <h2 class="mt-2 subtitle-2">TIMING</h2>
+                <div class="ml-3 mt-2" style="word-break: keep-all">
+                  縦線をドラッグすると音素のタイミングを編集できます。
+                </div>
+                <h2 class="mt-2 subtitle-2">PITCH</h2>
+                <div class="ml-3 mt-2" style="word-break: keep-all">
+                  ピッチの編集ができます。
+                </div>
+                <h2 class="mt-2 subtitle-2">DYNAMICS</h2>
+                <div class="ml-3 mt-2" style="word-break: keep-all">
+                  音量の編集ができます。
+                </div>
+              </div>
+            </div>
+            <h2 class="ml-2 mt-8 mb-1 headline">NEUTRINOの操作</h2>
+            <v-divider></v-divider>
+            <div class="mx-3 mt-3" style="word-break: keep-all">
+              NEUTRINOをGUIで操作できます。
+              メニューバーのNEUTRINO(N)からNEUTRINO操作パネルを選択し、実行したいモジュールを選んでください。
+              <div class="mt-4 ml-6" style="background-image: url('./image3.png'); width: 434px; height: 373px"></div>
+            </div>
+            <h2 class="ml-2 mt-8 mb-1 headline">Q&A</h2>
+            <v-divider></v-divider>
+            <div class="ml-3 mt-3" style="word-break: keep-all">
+              <div class="subtitle-1">読み込めないとき</div>
+              <div class="ml-3 mt-3" style="word-break: keep-all">
+
+              </div>
+            </div>
+          </v-card>
+        </div>
+      </v-content>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <!-- LICENSE: https://github.com/vuetifyjs/vuetify/blob/master/LICENSE.md -->
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data () {
+        return {
+        }
+      }
+    })
+  </script>
+</body>
+</html>
